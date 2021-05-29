@@ -1,0 +1,1 @@
+Open this folder (pycharm_simulation) in pycharm and hit enter, use arrow keys to check all the functions and use mouse to drag and drop
