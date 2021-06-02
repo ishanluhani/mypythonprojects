@@ -1,38 +1,4 @@
-import cv2
-import os
 
-path = 'E:/test/input'
-videos = os.listdir(path)
-
-for i in videos:
-    vid2_data = []
-    for j in videos:
-        vid1_data = []
-        if i != j:
-            vid_1 = cv2.VideoCapture(path + '/' + j)
-            while True:
-                try:
-                    ret, frame = vid_1.read()
-                    vid1_data.append(frame)
-                    cv2.imshow('frame', frame)
-                except Exception:
-                    break
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
-            vid_2 = cv2.VideoCapture(path + '/' + i)
-            while True:
-                try:
-                    ret, frame = vid_2.read()
-                    vid2_data.append(frame)
-                    cv2.imshow('frame', frame)
-                except Exception:
-                    break
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
-            print(vid1_data)
-            if vid1_data in vid2_data or vid2_data in vid1_data:
-                print('ff')
-'''
 from os import path, walk, makedirs, rename
 from shutil import copyfile
 from time import clock
@@ -171,4 +137,3 @@ if __name__ == '__main__':
     multiprocess_video_to_json()
     mv_analyzed_file()
     duplicate_analyzer()
-'''
